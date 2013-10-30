@@ -7,6 +7,11 @@ and have history of it. The idea was adapted heavily (OK, stolen) from @cyphacto
 project <https://github.com/cyphactor>. I merged my .vimrc with his and have
 built a powerful set of editing tools. 
 
+It seems like it's out here to share with the world. That's great if you glean
+something from it, but my real reason is to make sure I can move this around
+from machine to machine. Altruism is really just a side effect of convenience
+in this case. Feel free to steal what you'd like, though.
+
 ## Installation:
 
     git clone git://github.com/bikeonastick/dotvim.git ~/.vim
