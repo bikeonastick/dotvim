@@ -162,13 +162,16 @@ easier.
 
 #### vim-ctrlp
 
-<https://github.com/kien/ctrlp.vim>
+[https://github.com/kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
 
 #### vim-matchit
 
-<http://www.vim.org/scripts/script.php?script_id=39>
+[http://www.vim.org/scripts/script.php?script_id=39](http://www.vim.org/scripts/script.php?script_id=39)
 
 #### ruby-matchit
 
-<https://github.com/vim-scripts/ruby-matchit>
+[https://github.com/vim-scripts/ruby-matchit](https://github.com/vim-scripts/ruby-matchit)
 
+#### vim-elixir
+
+[https://github.com/elixir-lang/vim-elixir.git](https://github.com/elixir-lang/vim-elixir.git)
