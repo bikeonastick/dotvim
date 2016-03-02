@@ -1,6 +1,9 @@
 " for closing html tags
 :iabbrev <// </<C-X><C-O>
 
+" for vertical splits for Gdiff
+set diffopt+=vertical
+
 " for pasting code. turns indent off press f2 again to return to indent
 set pastetoggle=<F2> 
 
