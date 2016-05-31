@@ -19,9 +19,6 @@ set incsearch
 " we're not keeping tabs around 
 set expandtab
 
-" enable quick bg change light or dark
-map <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-
 " open the vimrc file
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
@@ -31,15 +28,8 @@ nnoremap <leader>rc :source $MYVIMRC<cr>
 " run the shell
 nnoremap <leader>! :Shell
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" background color 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" standardize on dark background
-set background=dark
-" but... if you want solarized light, use this
 " Press F4 to toggle highlighting on/off, and show current value.
 :noremap <F4> :set hlsearch! hlsearch?<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " toggle hlsearch with <leader>h (same as F4 above 
 nnoremap <leader>h :set hlsearch! hlsearch?<CR>
@@ -55,9 +45,6 @@ filetype plugin indent on
 
 " set the clipboard to unnamed so it uses the system clipboard
 set clipboard=unnamed
-
-" enable pathogen to load all the vim bundles in ~/.vim/bundle/
-call pathogen#infect()
 
 " Set the font when using MacVim.app, this is ignored for console vim as it
 " simply uses the console font.
@@ -78,7 +65,7 @@ set history=10000
 
 " Set the word wrap character limit, this will force word wrap past the
 " specified column.
-" set textwidth=78
+set textwidth=80
 
 " Default to tab size of two spaces and enable auto indent
 "set tabstop=2
@@ -192,23 +179,13 @@ augroup vimrcEx
   " Don't syntax highlight markdown because it's often wrong
   autocmd! FileType mkd setlocal syn=off
 augroup END
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COLOR
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tell it to use the solarized color scheme
-" http://ethanschoonover.com/solarized
-" In order to have this work properly in iTerm2 you also need to setup the
-" iTerm2 solarized color scheme.
-" solarized is so awesome... just do it
-colorscheme solarized
 
-" Tell it to use the ir_black color scheme
-" http://blog.toddwerth.com/entries/8
-" set background=dark
-" colorscheme ir_black
+" standardize on dark background
+set background=dark
+" but... you can quickly toggle to solarized light, with this
 
-" set background=dark
-" colorscheme herald
+" enable quick bg change light or dark
+map <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
@@ -546,3 +523,58 @@ command! VcukeL call s:RunShellCommand('vagrant ssh -c "cd /vagrant && bundle ex
 command! Vspec call s:RunShellCommand('vagrant ssh -c "cd /vagrant && bundle exec rspec ' .expand('%p').'"')
 command! VspecL call s:RunShellCommand('vagrant ssh -c "cd /vagrant && bundle exec rspec ' .expand('%p').':'.line(".").'"')
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" using vim-plug
+" https://github.com/junegunn/vim-plug
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" setup for vim-plug
+call plug#begin('~/.vim/plugged')
+
+" plugins to load
+" ack
+Plug 'https://github.com/mileszs/ack.vim.git'
+" gist-vim
+Plug 'https://github.com/mattn/gist-vim.git'
+" ruby-matchit
+Plug 'https://github.com/vim-scripts/ruby-matchit.git'
+" tcomment_vim
+Plug 'https://github.com/tomtom/tcomment_vim.git'
+" vim-clojure-static
+Plug 'https://github.com/guns/vim-clojure-static.git'
+" vim-colors-solarized
+Plug 'https://github.com/altercation/vim-colors-solarized.git'
+" vim-ctrlp
+Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
+" vim-dispatch
+Plug 'https://github.com/tpope/vim-dispatch.git'
+" vim-fugitive
+Plug 'https://github.com/tpope/vim-fugitive.git'
+" vim-rails
+Plug 'https://github.com/tpope/vim-rails.git'
+" vim-surround
+Plug 'https://github.com/tpope/vim-surround.git'
+" vim-markdown
+Plug 'https://github.com/tpope/vim-markdown.git'
+" vim-elixir
+Plug 'https://github.com/elixir-lang/vim-elixir.git'
+" vim-go
+Plug 'https://github.com/fatih/vim-go.git'
+" vim-livedown
+Plug 'https://github.com/shime/vim-livedown.git'
+" vim-matchit
+Plug 'https://github.com/jwhitley/vim-matchit.git'
+" webapi-vim
+Plug 'https://github.com/vim-scripts/WebAPI.vim.git'
+
+" Add plugins to &runtimepath
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLOR
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tell it to use the solarized color scheme
+" http://ethanschoonover.com/solarized
+" In order to have this work properly in iTerm2 you also need to setup the
+" iTerm2 solarized color scheme.
+" solarized is so awesome... just do it
+colorscheme solarized
