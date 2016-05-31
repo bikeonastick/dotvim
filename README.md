@@ -14,29 +14,23 @@ in this case. Feel free to steal what you'd like, though.
 
 ## Installation:
 
-    git clone git://github.com/bikeonastick/dotvim.git 
+1. `git clone git://github.com/bikeonastick/dotvim.git`
+1. `cd dotvim`
+1. `git submodule init`
+1. `git submodule update`
+1. `ln -s `pwd` ~/.vim`
+1. `ln -s `pwd`/vim-plug/plug.vim `pwd`/autoload/plug.vim`
+1. `ln -s `pwd`/vimrc ~/.vimrc`
+1. `ln -s `pwd`/gvimrc ~/.gvimrc`
+1. open vim and run the plugin install command 
+   `:PlugInstall`
 
-    cd dotvim
-    git submodule init
-    git submodule update
-    ln -s `pwd` ~/.vim
-    ln -s `pwd`/vim-plug/plug.vim `pwd`/autoload/plug.vim
-    ln -s `pwd`/vimrc ~/.vimrc
-    ln -s `pwd`/gvimrc ~/.gvimrc
-
-## Upgrade
-
-    cd ~/.vim
-
-    git pull
-    git submodule init
-    git submodule update
 
 ## Color Scheme
 
 My `.vimrc` is setup to use the Solarized Color Scheme which can be found at
 [http://ethanschoonover.com/solarized](http://ethanschoonover.com/solarized).
-My `.vim` directory includes this color scheme as Git submodule just like all
+My `.vim/plugged` directory includes this color scheme just like all
 the plugins. The reason I mention this is because I have it configured to use
 the non 256 degraded Vim color version. This requires that you are using the
 Solarized Color Scheme for your terminal application as well. I for example am
