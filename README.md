@@ -14,14 +14,15 @@ in this case. Feel free to steal what you'd like, though.
 
 ## Installation:
 
-    git clone git://github.com/bikeonastick/dotvim.git ~/.vim
+    git clone git://github.com/bikeonastick/dotvim.git 
 
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
-
-    cd ~/.vim
+    cd dotvim
     git submodule init
     git submodule update
+    ln -s `pwd` ~/.vim
+    ln -s `pwd`/vim-plug/plug.vim `pwd`/autoload/plug.vim
+    ln -s `pwd`/vimrc ~/.vimrc
+    ln -s `pwd`/gvimrc ~/.gvimrc
 
 ## Upgrade
 
