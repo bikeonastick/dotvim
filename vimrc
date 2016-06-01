@@ -413,7 +413,6 @@ function! s:RunShellCommand(cmdline)
      endif
   endfor
   botright new
-  source ~/.vim/bundle/AnsiEsc.vim/plugin/AnsiEscPlugin.vim
   setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
   call setline(1, 'You entered:    ' . a:cmdline)
   call setline(2, 'Expanded Form:  ' .expanded_cmdline)
