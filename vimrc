@@ -1,3 +1,6 @@
+" for livedown
+let g:livedown_browser = "safari"
+
 " for closing html tags
 :iabbrev <// </<C-X><C-O>
 
@@ -164,6 +167,7 @@ augroup vimrcEx
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
+  autocmd BufRead *.md  set ai sw=4 sts=4 ts=4 et formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
 
@@ -521,6 +525,11 @@ command! Vcuke call s:RunShellCommand('vagrant ssh -c "cd /vagrant && bundle exe
 command! VcukeL call s:RunShellCommand('vagrant ssh -c "cd /vagrant && bundle exec cucumber --no-color ' .expand('%p').':'.line(".").'"')
 command! Vspec call s:RunShellCommand('vagrant ssh -c "cd /vagrant && bundle exec rspec ' .expand('%p').'"')
 command! VspecL call s:RunShellCommand('vagrant ssh -c "cd /vagrant && bundle exec rspec ' .expand('%p').':'.line(".").'"')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" commands for inserting text
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:command Iamp :normal! i <html <C-v>u26a1><ESC>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " using vim-plug
